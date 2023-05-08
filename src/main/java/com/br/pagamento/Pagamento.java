@@ -1,32 +1,9 @@
 package com.br.pagamento;
 
-import jakarta.persistence.*;
-
-@Entity
 public class Pagamento {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private Usuario usuario;
     private Metodo metodo;
-    private Double valor;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+    private String cpf;
+    private double valor;
 
     public Metodo getMetodo() {
         return metodo;
@@ -36,11 +13,19 @@ public class Pagamento {
         this.metodo = metodo;
     }
 
-    public Double getValor() {
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 }
